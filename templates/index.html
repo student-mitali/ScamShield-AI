@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ScamShield AI</title>
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <div class="logo">
+        🛡 ScamShield AI
+    </div>
+
+    <div class="nav-links">
+        <a href="#">Features</a>
+        <a href="#">How it Works</a>
+        <a href="#">Analyze</a>
+        <a href="#">GitHub</a>
+    </div>
+
+</nav>
+
+<section class="hero">
+
+    <div class="hero-left">
+
+        <div class="badge">
+            AI Powered Cybersecurity Assistant
+        </div>
+
+        <h1>
+            Stay One Step Ahead
+            <br>
+            of Online Scams.
+        </h1>
+
+        <p>
+            Detect phishing, fake job offers, OTP scams,
+            malicious links and online fraud using AI in seconds.
+        </p>
+
+        <a href="#analyzer">
+            <button class="hero-btn">
+                Analyze a Message →
+            </button>
+        </a>
+
+    </div>
+
+    <div class="hero-right">
+
+        <div class="shield-card">
+
+    <div class="shield-icon">
+        🛡
+    </div>
+
+    <h3>AI ACTIVE</h3>
+
+    <p>Threat Detection Enabled</p>
+
+    <div class="live-dot"></div>
+
+</div>
+
+    </div>
+
+</section>
+<section class="features">
+
+    <h2 class="section-title">
+        Everything You Need to Stay Safe
+    </h2>
+
+    <p class="section-subtitle">
+        Powerful AI features designed to protect you from modern online scams.
+    </p>
+
+    <div class="feature-grid">
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                🛡
+            </div>
+
+            <h3>Scam Detection</h3>
+
+            <p>
+                Detect phishing emails, fake job offers,
+                lottery scams, OTP fraud and UPI scams instantly.
+            </p>
+
+        </div>
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                🤖
+            </div>
+
+            <h3>AI Explanation</h3>
+
+            <p>
+                AI explains exactly why a message is suspicious
+                in simple language anyone can understand.
+            </p>
+
+        </div>
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                🔗
+            </div>
+
+            <h3>Malicious Link Detection</h3>
+
+            <p>
+                Identify suspicious URLs before clicking
+                and protect yourself from phishing websites.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+<section class="stats">
+
+    <div class="stat-card">
+        <h2>99%</h2>
+        <p>Detection Accuracy</p>
+    </div>
+
+    <div class="stat-card">
+        <h2>24/7</h2>
+        <p>AI Protection</p>
+    </div>
+
+    <div class="stat-card">
+        <h2>5+</h2>
+        <p>Scam Categories</p>
+    </div>
+
+    <div class="stat-card">
+        <h2>100%</h2>
+        <p>Privacy First</p>
+    </div>
+
+</section>
+<section class="workflow">
+
+    <h2 class="section-title">
+        How ScamShield AI Works
+    </h2>
+
+    <p class="section-subtitle">
+        Protect yourself in just four simple steps.
+    </p>
+
+    <div class="workflow-container">
+
+        <div class="workflow-card">
+
+            <div class="workflow-number">1</div>
+
+            <div class="workflow-icon">📩</div>
+
+            <h3>Paste Message</h3>
+
+            <p>
+                Paste any suspicious SMS, Email,
+                WhatsApp or social media message.
+            </p>
+
+        </div>
+
+        <div class="arrow">→</div>
+
+        <div class="workflow-card">
+
+            <div class="workflow-number">2</div>
+
+            <div class="workflow-icon">🤖</div>
+
+            <h3>AI Analysis</h3>
+
+            <p>
+                Our AI scans for phishing,
+                urgency, fraud patterns and scams.
+            </p>
+
+        </div>
+
+        <div class="arrow">→</div>
+
+        <div class="workflow-card">
+
+            <div class="workflow-number">3</div>
+
+            <div class="workflow-icon">🚨</div>
+
+            <h3>Threat Detection</h3>
+
+            <p>
+                Receive a risk score,
+                scam category and explanation.
+            </p>
+
+        </div>
+
+        <div class="arrow">→</div>
+
+        <div class="workflow-card">
+
+            <div class="workflow-number">4</div>
+
+            <div class="workflow-icon">🛡</div>
+
+            <h3>Stay Protected</h3>
+
+            <p>
+                Get clear safety tips
+                and know exactly what to do next.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<div class="container" id="analyzer">
+    <h2 class="analyzer-title">
+    Analyze a Suspicious Message
+</h2>
+<div class="message-types">
+
+    <div class="type active" onclick="selectType(this)">
+        📱 SMS
+    </div>
+
+    <div class="type" onclick="selectType(this)">
+        📧 Email
+    </div>
+
+    <div class="type" onclick="selectType(this)">
+        💬 WhatsApp
+    </div>
+
+    <div class="type" onclick="selectType(this)">
+        🌐 Website
+    </div>
+
+    <div class="type" onclick="selectType(this)">
+        📲 Social Media
+    </div>
+
+</div>
+
+<p class="analyzer-subtitle">
+    Paste any SMS, Email, WhatsApp or social media message and let ScamShield AI analyze it for scams in seconds.
+</p>
+<div class="demo-section">
+
+    <p class="demo-title">
+        Try a Demo Message
+    </p>
+
+    <div class="demo-buttons">
+
+        <button type="button" onclick="fillDemo('otp')">
+            OTP Scam
+        </button>
+
+        <button type="button" onclick="fillDemo('lottery')">
+            Lottery
+        </button>
+
+        <button type="button" onclick="fillDemo('job')">
+            Fake Job
+        </button>
+
+        <button type="button" onclick="fillDemo('bank')">
+            Bank KYC
+        </button>
+
+    </div>
+
+</div>
+
+  <form method="POST">
+
+    <textarea
+        id="message"
+        name="message"
+        placeholder="Paste a suspicious SMS, Email or WhatsApp message..."
+        required></textarea>
+
+    <br>
+
+    <button type="submit" class="analyze-btn">
+        🛡 Analyze with AI →
+    </button>
+
+</form>
+
+
+    {% if result %}
+
+<div class="result-card">
+
+    <h2>🛡 AI Threat Report</h2>
+
+    {% if result.risk=="High" %}
+        <div class="risk high">
+            🔴 HIGH RISK
+        </div>
+
+    {% elif result.risk=="Medium" %}
+        <div class="risk medium">
+            🟠 MEDIUM RISK
+        </div>
+
+    {% else %}
+        <div class="risk low">
+            🟢 LOW RISK
+        </div>
+    {% endif %}
+
+    <div class="score-box">
+
+        <h3>Threat Score</h3>
+
+        <div class="progress">
+
+            <div class="progress-bar"
+                 style="width: {{ result.score }}%;">
+
+                {{ result.score }}%
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="type-box">
+
+        <h3>Threat Type</h3>
+        <div class="type-box">
+
+    <h3>AI Confidence</h3>
+
+    <p>{{ result.confidence }}%</p>
+
+</div>
+
+        <p>{{ result.type }}</p>
+
+    </div>
+
+    <div class="reason-box">
+
+        <h3>Threat Indicators</h3>
+
+        <ul>
+
+        {% for reason in result.reasons %}
+            <li>✔ {{ reason }}</li>
+        {% endfor %}
+
+        </ul>
+
+    </div>
+
+    <div class="tip-box">
+
+        <h3>Safety Recommendations</h3>
+
+        <ul>
+
+        {% for tip in result.tips %}
+            <li>🛡 {{ tip }}</li>
+        {% endfor %}
+
+        </ul>
+
+    </div>
+
+</div>
+
+{% endif %}
+
+       
+
+</div>
+
+<script>
+
+function fillDemo(type){
+
+    const textarea = document.getElementById("message");
+
+    if(type==="otp"){
+        textarea.value="Your OTP is 493921. Share it immediately to verify your bank account.";
+    }
+
+    else if(type==="lottery"){
+        textarea.value="Congratulations! You won ₹25,00,000 in our international lottery. Click here to claim your prize.";
+    }
+
+    else if(type==="job"){
+        textarea.value="Congratulations! You have been selected for a work from home job. Pay ₹999 registration fee immediately.";
+    }
+
+    else{
+        textarea.value="Dear Customer, your bank KYC has expired. Update now using this link or your account will be blocked.";
+    }
+
+}
+
+function selectType(selected){
+
+    document.querySelectorAll(".type").forEach(btn=>{
+        btn.classList.remove("active");
+    });
+
+    selected.classList.add("active");
+
+}
+
+
+
+</script>
+<script>
+
+window.addEventListener("load", function(){
+
+    const result = document.querySelector(".result-card");
+
+    if(result){
+
+        document.getElementById("analyzer").scrollIntoView({
+
+            behavior:"smooth"
+
+        });
+
+    }
+
+});
+
+</script>
+<!-- AI Loading Screen -->
+
+<div id="loading-screen">
+
+    <div class="loader-box">
+
+        <div class="loader-shield">
+            🛡
+        </div>
+
+        <h2>ScamShield AI</h2>
+
+        <p id="loading-text">
+            Reading message...
+        </p>
+
+        <div class="loading-bar">
+
+            <div class="loading-progress"></div>
+
+        </div>
+
+    </div>
+
+</div>
+</body>
+</html>
