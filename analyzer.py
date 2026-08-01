@@ -1,3 +1,31 @@
+
+AI_EXPLANATIONS = {
+
+    "OTP Scam":
+    "This message attempts to obtain your One-Time Password (OTP). Genuine banks, payment apps and government agencies never ask for your OTP through SMS, WhatsApp or email.",
+
+    "Bank KYC Scam":
+    "Scammers often impersonate banks and claim your account will be blocked unless you immediately update your KYC using a fake website.",
+
+    "Lottery Scam":
+    "Unexpected lottery or prize notifications are a common scam. Legitimate organizations do not ask winners to pay processing fees or click unknown links.",
+
+    "Fake Job Scam":
+    "Real companies never ask candidates to pay registration fees, interview charges or security deposits before hiring.",
+
+    "UPI Scam":
+    "Fraudsters trick victims into approving UPI collect requests or fake payment confirmations instead of receiving money.",
+
+    "Courier Scam":
+    "Fake courier messages create urgency about a parcel and redirect victims to phishing websites asking for payment or personal information.",
+
+    "Romance Scam":
+    "Romance scammers build emotional trust before requesting money for emergencies, travel expenses or medical bills.",
+
+    "Unknown":
+    "The message contains suspicious characteristics commonly found in online scams. Always verify the sender before taking action."
+
+}
 def analyze_message(message):
 
     text = message.lower()
@@ -7,6 +35,7 @@ def analyze_message(message):
 
     reasons = []
     tips = []
+    detected_keywords = []
 
     # ---------------- OTP ----------------
 
@@ -18,6 +47,7 @@ def analyze_message(message):
         score += 40
         scam_type = "OTP Scam"
         reasons.append("Requests or mentions an OTP.")
+        detected_keywords.extend(["OTP"])
 
     # ---------------- KYC ----------------
 
@@ -31,7 +61,7 @@ def analyze_message(message):
         score += 45
         scam_type = "Bank KYC Scam"
         reasons.append("Fake KYC / account verification request.")
-
+        detected_keywords.extend(["KYC", "Bank"])
     # ---------------- Fake Job ----------------
 
     job_keywords = [
@@ -47,7 +77,7 @@ def analyze_message(message):
         score += 40
         scam_type = "Fake Job Scam"
         reasons.append("Suspicious job offer.")
-
+        detected_keywords.extend(["Job", "Salary"])
     # ---------------- Lottery ----------------
 
     lottery_keywords = [
@@ -63,6 +93,7 @@ def analyze_message(message):
         score += 45
         scam_type = "Lottery Scam"
         reasons.append("Claims you won money or a prize.")
+        detected_keywords.extend(["Lottery", "Prize"])
 
     # ---------------- UPI ----------------
 
@@ -79,6 +110,7 @@ def analyze_message(message):
         score += 45
         scam_type = "UPI Scam"
         reasons.append("Suspicious UPI payment request.")
+        detected_keywords.extend(["UPI", "Payment"])
 
     # ---------------- Courier ----------------
 
@@ -95,6 +127,7 @@ def analyze_message(message):
         score += 35
         scam_type = "Courier Scam"
         reasons.append("Fake parcel or courier notification.")
+        detected_keywords.extend(["Parcel", "Courier"])
 
     # ---------------- Romance ----------------
 
@@ -110,6 +143,7 @@ def analyze_message(message):
         score += 40
         scam_type = "Romance Scam"
         reasons.append("Emotional manipulation requesting money.")
+        detected_keywords.extend(["Emergency", "Money"])
 
     # ---------------- Links ----------------
 
@@ -117,7 +151,9 @@ def analyze_message(message):
 
         score += 20
 
+        
         reasons.append("Contains a suspicious link.")
+        detected_keywords.append("Link")
 
     # ---------------- Urgency ----------------
 
@@ -137,6 +173,7 @@ def analyze_message(message):
         score += 15
 
         reasons.append("Creates urgency to pressure you.")
+        detected_keywords.append("Urgency")
 
     # ---------------- Payment ----------------
 
@@ -154,6 +191,7 @@ def analyze_message(message):
         score += 20
 
         reasons.append("Requests payment.")
+        detected_keywords.append("Payment")
 
     # ---------------- Clamp ----------------
 
@@ -194,6 +232,11 @@ def analyze_message(message):
     "score": score,
     "confidence": confidence,
     "type": scam_type,
+    "explanation": AI_EXPLANATIONS.get(
+        scam_type,
+        AI_EXPLANATIONS["Unknown"]
+    ),
     "reasons": reasons,
+    "keywords": list(set(detected_keywords)),
     "tips": tips
 }

@@ -361,6 +361,13 @@
     <p>{{ result.confidence }}%</p>
 
 </div>
+<div class="explanation-box">
+
+    <h3>🧠 AI Explanation</h3>
+
+    <p>{{ result.explanation }}</p>
+
+</div>
 
         <p>{{ result.type }}</p>
 
@@ -379,6 +386,19 @@
         </ul>
 
     </div>
+    <div class="keywords-box">
+
+    <h3>🔍 Detected Keywords</h3>
+
+    <div class="keyword-list">
+
+        {% for keyword in result.keywords %}
+            <span class="keyword">{{ keyword }}</span>
+        {% endfor %}
+
+    </div>
+
+</div>
 
     <div class="tip-box">
 

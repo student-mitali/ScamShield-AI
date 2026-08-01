@@ -940,3 +940,67 @@ LOADING SCREEN
     box-shadow:0 0 40px rgba(0,212,255,.45);
 
 }
+.explanation-box{
+
+    margin-top:25px;
+
+    background:#101827;
+
+    border-left:5px solid #4F46E5;
+
+    padding:20px;
+
+    border-radius:12px;
+
+}
+
+.explanation-box h3{
+
+    color:white;
+
+    margin-bottom:10px;
+
+}
+
+.explanation-box p{
+
+    color:#d1d5db;
+
+    line-height:1.7;
+
+    font-size:16px;
+
+}
+.keywords-box{
+
+    margin-top:25px;
+
+}
+
+.keyword-list{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+    margin-top:12px;
+
+}
+
+.keyword{
+
+    background:#1f2937;
+
+    color:#60a5fa;
+
+    padding:10px 18px;
+
+    border-radius:999px;
+
+    border:1px solid #374151;
+
+    font-weight:600;
+
+}
