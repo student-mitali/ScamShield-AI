@@ -79,6 +79,7 @@ def analyze_url(url):
 
     else:
         risk = "Low"
+        
 
     # ---------------- Tips ----------------
 
@@ -88,14 +89,16 @@ def analyze_url(url):
         "Check the domain name carefully.",
         "Never enter passwords on unknown sites."
     ]
+    
+
+    confidence = min(score + 5, 99)
 
     return {
-
-        "risk": risk,
-        "score": score,
-        "type": "Suspicious URL",
-        "reasons": reasons,
-        "tips": tips,
-        "keywords": list(set(detected))
-
-    }
+    "risk": risk,
+    "score": score,
+    "confidence": confidence,
+    "type": "Suspicious URL",
+    "reasons": reasons,
+    "tips": tips,
+    "keywords": list(set(detected))
+}

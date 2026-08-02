@@ -242,25 +242,15 @@
 </h2>
 <div class="message-types">
 
-    <div class="type active" onclick="selectType(this)">
-        📱 SMS
+    <div class="type active" onclick="selectMode(this,'message')">
+        📩 Message
     </div>
 
-    <div class="type" onclick="selectType(this)">
-        📧 Email
+    <div class="type" onclick="selectMode(this,'url')">
+        🌐 URL
     </div>
 
-    <div class="type" onclick="selectType(this)">
-        💬 WhatsApp
-    </div>
-
-    <div class="type" onclick="selectType(this)">
-        🌐 Website
-    </div>
-
-    <div class="type" onclick="selectType(this)">
-        📲 Social Media
-    </div>
+</div>
 
 </div>
 
@@ -296,6 +286,7 @@
 </div>
 
   <form method="POST">
+    <input type="hidden" id="mode" name="mode" value="message">
 
     <textarea
         id="message"
@@ -476,13 +467,27 @@ function fillDemo(type){
 
 }
 
-function selectType(selected){
+function selectMode(selected, mode){
 
     document.querySelectorAll(".type").forEach(btn=>{
         btn.classList.remove("active");
     });
 
     selected.classList.add("active");
+
+    document.getElementById("mode").value = mode;
+
+    const textarea = document.getElementById("message");
+
+    if(mode==="url"){
+
+        textarea.placeholder = "Paste a suspicious URL...";
+
+    }else{
+
+        textarea.placeholder = "Paste a suspicious SMS, Email or WhatsApp message...";
+
+    }
 
 }
 
