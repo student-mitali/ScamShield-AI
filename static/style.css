@@ -1004,3 +1004,53 @@ LOADING SCREEN
     font-weight:600;
 
 }
+.report-actions{
+
+    margin-top:30px;
+    text-align:center;
+
+}
+
+.copy-btn{
+
+    background:#2563eb;
+    color:white;
+    border:none;
+    padding:14px 28px;
+    border-radius:10px;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s;
+
+}
+
+.copy-btn:hover{
+
+    background:#1d4ed8;
+    transform:translateY(-2px);
+
+}
+.history-card{
+
+    margin-top:40px;
+    background:#111827;
+    padding:25px;
+    border-radius:14px;
+
+}
+
+.history-item{
+
+    display:flex;
+    justify-content:space-between;
+    padding:12px 0;
+    border-bottom:1px solid #374151;
+
+}
+
+.history-item:last-child{
+
+    border-bottom:none;
+
+}

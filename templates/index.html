@@ -332,7 +332,37 @@
         <div class="risk low">
             🟢 LOW RISK
         </div>
+        <div class="report-actions">
+
+    <button class="copy-btn" onclick="copyReport()">
+        📋 Copy Report
+    </button>
+
+</div>
     {% endif %}
+    {% if history %}
+
+<div class="history-card">
+
+    <h2>🕒 Recent Scans</h2>
+
+    {% for item in history %}
+
+    <div class="history-item">
+
+        <span>{{ item.type }}</span>
+
+        <span>{{ item.risk }}</span>
+
+        <span>{{ item.score }}%</span>
+
+    </div>
+
+    {% endfor %}
+
+</div>
+
+{% endif %}
 
     <div class="score-box">
 
@@ -476,7 +506,17 @@ window.addEventListener("load", function(){
     }
 
 });
+function copyReport(){
 
+    const report = document.querySelector(".result-card");
+
+    const text = report.innerText;
+
+    navigator.clipboard.writeText(text);
+
+    alert("✅ Report copied to clipboard!");
+
+}
 </script>
 <!-- AI Loading Screen -->
 
