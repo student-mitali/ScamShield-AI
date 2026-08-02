@@ -1054,3 +1054,29 @@ LOADING SCREEN
     border-bottom:none;
 
 }
+.stats-container{
+    display:flex;
+    gap:20px;
+    justify-content:center;
+    margin:25px 0;
+    flex-wrap:wrap;
+}
+
+.stat-card{
+    background:#ffffff;
+    border-radius:12px;
+    padding:20px;
+    width:160px;
+    text-align:center;
+    box-shadow:0 4px 12px rgba(0,0,0,.08);
+}
+
+.stat-card h3{
+    color:#666;
+    margin-bottom:10px;
+}
+
+.stat-card h2{
+    font-size:32px;
+    color:#2c3e50;
+}
