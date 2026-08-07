@@ -1,4 +1,7 @@
+from google import genai
+import os
 
+client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
 AI_EXPLANATIONS = {
 
     "OTP Scam":
@@ -240,3 +243,9 @@ def analyze_message(message):
     "keywords": list(set(detected_keywords)),
     "tips": tips
 }
+if __name__ == "__main__":
+    response = client.models.generate_content(
+        model="gemini-2.5-flash",
+        contents="Reply with exactly one word: WORKING"
+    )
+    print(response.text)
